@@ -1,0 +1,73 @@
+
+{% extends 'blog/base.html' %}
+
+    {%block titulo%}Pagina Home{% endblock titulo %}
+
+    {% block cuerpo %}
+        {% if request.user.is_authenticated %}
+            {% for post in posts%}
+                <article class="media content-section">
+                    <img class="rounded-circle article-img" src="{{post.author.profile.image.url}}">
+                    <div class="media-body">
+                        <div class="article-metadata">
+                            <a class="mr-2" href="#">{{ post.author.first_name }} {{ post.author.last_name }}</a>
+                            <small class="text-muted">{{ post.date_posted }}</small>
+                        </div>
+                        <h2><a class="article-title" href="{%url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+                        {%if post.image != ''%}
+                            <img class="imagen-subida" src="{{post.image.url}}" alt="Imagen Post" width= '600px'>
+                        {% endif %}              
+                        <p class="article-content">{{ post.content }}</p>
+                        {%if post.megusta >= 0%}
+                        <small class="account-megusta">A</small> <small class="account-megusta" style= "color:green"> {{ post.megusta }}</small><small class="account-megusta"> personas les gusta esto.</small>
+                        {%elif post.megusta <= -1 %}
+                        <small class="account-megusta">A</small> <small class="account-megusta" style= "color:red"> {{ post.megusta }}</small><small class="account-megusta"> personas no les gusta esto.</small>
+                        {% endif %}
+                        <div class="row" align="center" margin-up="20px">
+                            <div class="col-12 col-lg-3">
+                                <form method="post" action="{{post.megusta}}">
+                                    <button type="submit" name="submit_param" value="submit_value" class="btn btn-secondary">Me gusta</button>
+                                  </form>
+                            </div>
+                            <div class="col-12 col-lg-9">
+                                <form method="post" action="{{post.megusta}}">
+                                    <button type="submit" name="submit_param" value="submit_value" class="btn btn-secondary">No me gusta</button>
+                                  </form>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            {% endfor %}
+        {%else%}
+        <h2 class="article-content">Create una cuenta y empezá a disfrutar de CaraLibro.</h2>
+        <div class="border-top pt-2">
+        <img src="media/fondo.jpg" class="rounded img-fluid" alt="Responsive image">
+        </div>
+        <div class="border-top pt-2">
+            <small class="text-muted">
+                ¿Todavía no tenés una cuenta? <a class="ml-2" href="{%url "Registrarse"%}">¡Registrate!</a>
+            </small>
+        </div>
+        {%endif%}
+        {% if is_paginated %}
+            {% if page_obj.has_previous %}
+                <a class="btn btn-outline-info mb-4" href="?page=1">Primera</a>
+                <a class="btn btn-outline-info mb-4" href="?page={{page_obj.prevous_page_number}}">Anterior</a>
+            {% endif %}
+
+            {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                    <a class="btn btn-info mb-4" href="?page={{num}}">{{ num }}</a>
+                {% elif num > page_obj.number|add:'-3' and num > page_obj.number|add:'-3' %}
+                    <a class="btn btn-outline-info mb-4" href="?page={{num}}">{{ num }}</a>
+                {% endif %}
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+                <a class="btn btn-outline-info mb-4" href="?page={{page_obj.next_page_number}}">Siguiente</a>
+                <a class="btn btn-outline-info mb-4" href="?page={{page_obj.paginator.num_pages}}">Ultima</a>
+            {% endif %}
+
+
+        {% endif %}
+    {% endblock cuerpo %}

@@ -1,0 +1,38 @@
+
+{% extends 'blog/base.html' %}
+
+{%block titulo%}Pagina Home{% endblock titulo %}
+
+{% block cuerpo %}
+    {% if request.user.is_authenticated %}
+        <article class="media content-section">
+            <img class="rounded-circle article-img" src="{{object.author.profile.image.url}}">
+            <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2" href="#">{{ object.author.first_name }} {{ object.author.last_name }}</a>
+                <small class="text-muted">{{ object.date_posted }}</small>
+            </div>
+            <h2 class="article-title"> {{object.title}}</h2>
+            {%if post.image != ''%}
+                        <img class="imagen-subida" src="{{post.image.url}}" alt="Imagen Post" width= '600px'>
+                    {% endif %}   
+            <p class="article-content">{{ object.content }}</p>
+            {%if object.author.username == user.username%}
+            <a class="btn btn-secondary" href="{%url 'post-update' object.id %}">Actualizar</a>
+            <a class="btn btn-danger" href="{%url 'post-delete' object.id %}">Eliminar</a>
+            {%else%}
+            {%endif%}
+            </div>
+        </article>
+    {%else%}
+        <h2 class="article-content">Inicia sesión en CaraLibro para ver esta pagina.</h2>
+        <div class="border-top pt-2">
+        <img src="media/fondo.jpg" class="rounded img-fluid" alt="Responsive image">
+        </div>
+        <div class="border-top pt-2">
+            <small class="text-muted">
+                ¿Todavía no tenés una cuenta? <a class="ml-2" href="{%url "Registrarse"%}">¡Registrate!</a>
+            </small>
+        </div>
+    {%endif%}
+{% endblock cuerpo %}

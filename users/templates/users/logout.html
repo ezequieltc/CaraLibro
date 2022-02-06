@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{%block titulo%}Cerrar Sesion{% endblock titulo %}
+        {%block cuerpo%}
+            <div class="content-section">
+                <form method="POST">           
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4">Sesion cerrada</legend>
+                        {{ form | crispy}}
+                    </fieldset>
+                    <div class="form.group">
+                        <p class='text-muted'>Su sesión ha sido cerrada. Redireccionando en 3 segundos... </p>
+                        <a class='btn btn-success' href="/">Continuar</a>
+                    </div>
+                    <meta http-equiv="refresh" content="3;url= /" />
+                </form>
+            </div>
+        
+        
+        {% endblock %}
