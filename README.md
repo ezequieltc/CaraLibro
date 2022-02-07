@@ -3,7 +3,7 @@ CaraLibro es un modelo basado en Facebook que fue creado para demostrar mi uso d
 
 Sin embargo, agregué la posibilidad de subir imagenes a los post también como poner "me gusta". Tiene una base de datos sencilla donde guarda la información de los post que se crean junto con todos los atributos que tienen como imagenes, autor, fechas y me gusta.
 
-La página permite crear un usuario y subir texto e imagenes.
+La página permite crear usuarios, hacer posts con texto e imagenes.
 
 ![CaraLibro](https://user-images.githubusercontent.com/94491753/152708608-9be76f51-18a5-4392-b7a0-4cea2890a6e8.jpg)
 
