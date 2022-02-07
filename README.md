@@ -7,8 +7,11 @@ La página permite crear un usuario y subir texto e imagenes.
 
 ![CaraLibro](https://user-images.githubusercontent.com/94491753/152708608-9be76f51-18a5-4392-b7a0-4cea2890a6e8.jpg)
 
+También hay una sección de usuarios donde uno puede actualizar y cambiar su información de perfil.
 
-Este es un proyecto en constante desarrollo. No tiene ningún fin comercial, solo es para aprender a usar Django junto con Python. También practicar sobre el desarrollo full stack. El desarrollo de los archivos css y html fueron hechos por mi (con la ayuda del tutorial) por lo cual me insertó en el mundo del HTML.
+![CaraLibroperfil](https://user-images.githubusercontent.com/94491753/152709175-35d11392-13f8-478f-9738-a43fb8f8d492.jpg)
+
+Este es un proyecto en constante desarrollo. El objetivo es lograr una aplicación totalmente personalizada. No tiene ningún fin comercial, solo es para aprender a usar Django junto con Python. También practicar sobre el desarrollo full stack. El desarrollo de los archivos css y html fueron hechos por mi (con la ayuda del tutorial) por lo cual me insertó en el mundo del HTML.
 
 Pueden acceder al proyecto en la siguiente página para usar y postear sin problemas.
 
