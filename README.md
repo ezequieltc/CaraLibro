@@ -1,6 +1,8 @@
 # CaraLibro
-CaraLibro es un modelo basado en Facebook que fue creado para demostrar mi uso de Python, Django y GitHub. Basicamente es un lugar donde se pueden subir imagenes y compartir texto con otros usarios dentro de la aplicación. Este proyecto fue iniciado en base a un tutorial de youtube hecho por Corey Schafer (link https://www.youtube.com/watch?v=UmljXZIypDc&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&ab_channel=CoreySchafer). Sin embargo, agregué la posibilidad de subir imagenes a los post también como poner "me gusta" 
-Tiene una base de datos sencilla donde guarda la información de los post que se crean junto con todos los atributos que tienen como imagenes, autor, fechas y me gusta.
+CaraLibro es un modelo basado en Facebook que fue creado para demostrar mi uso de Python, Django y GitHub. Basicamente es un lugar donde se pueden subir imagenes y compartir texto con otros usarios dentro de la aplicación. Este proyecto fue iniciado en base a un tutorial de youtube hecho por Corey Schafer (link https://www.youtube.com/watch?v=UmljXZIypDc&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&ab_channel=CoreySchafer). 
+
+Sin embargo, agregué la posibilidad de subir imagenes a los post también como poner "me gusta". Tiene una base de datos sencilla donde guarda la información de los post que se crean junto con todos los atributos que tienen como imagenes, autor, fechas y me gusta.
+
 La página permite crear un usuario y subir texto e imagenes.
 
 ![CaraLibro](https://user-images.githubusercontent.com/94491753/152708608-9be76f51-18a5-4392-b7a0-4cea2890a6e8.jpg)
